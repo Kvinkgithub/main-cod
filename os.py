@@ -66,14 +66,24 @@ import shutil
 # # print("===========")
 # print(f.readline())
 # f.close()
-
+#
 if not os.path.exists('D:/PythonProject1/111'):
     os.mkdir('111')
     print('папка 111 создана')
+else:
+    print('папка уже есть')
+
+os.chdir('222')
+if os.path.exists('D:/PythonProject1/222/test.txt'):
+    os.remove('test.txt')
+
+os.chdir('..')
 if not os.path.exists('D:/PythonProject1/222'):
     os.mkdir('222')
     print('папка 222 создана')
-os.chdir('..')
+else:
+    print('папка уже есть')
+
 os.chdir('111')
 file=open('test.txt','w')
 file.write('Hello, World')
@@ -87,3 +97,4 @@ file.write('Hello,<Алексей>')
 file.close()
 file=open('test.txt','r')
 print(file.read())
+
